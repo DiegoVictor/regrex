@@ -1,0 +1,24 @@
+{
+  "name": "regrex",
+  "version": "1.0.0",
+  "main": "serverless.ts",
+  "license": "MIT",
+  "engines": {
+    "node": ">=14.15.0"
+  },
+  "devDependencies": {
+    "@serverless/typescript": "^3.0.0",
+    "@types/aws-lambda": "^8.10.71",
+    "@typescript-eslint/eslint-plugin": "^5.30.3",
+    "@typescript-eslint/parser": "^5.30.3",
+    "esbuild": "^0.14.11",
+    "serverless": "^3.0.0",
+    "serverless-esbuild": "^1.23.3",
+    "ts-node": "^10.4.0",
+    "tsconfig-paths": "^3.9.0",
+    "typescript": "^4.1.3"
+  },
+  "dependencies": {
+    "aws-lambda": "^1.0.7"
+  }
+}
