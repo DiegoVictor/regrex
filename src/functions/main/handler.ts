@@ -1,4 +1,6 @@
 import { APIGatewayProxyEvent } from 'aws-lambda';
+import { promisify } from 'util';
+import { exec } from 'child_process';
 
 const flagsMap = [
   'd',
@@ -35,4 +37,9 @@ export const main = async (event: APIGatewayProxyEvent) => {
   const parsedFlags = flags
     .filter((key: string) => flagsMap.includes(key))
     .map((flag: string) => `${flag.length > 1 ? '--' : '-'}${flag}`);
+
+  const cmd = `grex ${parsedFlags.join(' ')} "${terms.join('" "')}"`;
+
+  const shell = promisify(exec);
+  const { stdout } = await shell(cmd);
 };
