@@ -42,4 +42,12 @@ export const main = async (event: APIGatewayProxyEvent) => {
 
   const shell = promisify(exec);
   const { stdout } = await shell(cmd);
+
+  return {
+    statusCode: 200,
+    headers: {
+      'Content-Type': 'text/plain',
+    },
+    body: stdout,
+  };
 };
