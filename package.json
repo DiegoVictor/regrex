@@ -6,6 +6,9 @@
   "engines": {
     "node": ">=14.15.0"
   },
+  "scripts": {
+    "test": "jest"
+  },
   "devDependencies": {
     "@serverless/typescript": "^3.0.0",
     "@types/aws-lambda": "^8.10.71",
