@@ -28,6 +28,15 @@ const serverlessConfiguration: AWS = {
       concurrency: 10,
     },
   },
+  layers: {
+    Grex: {
+      name: 'Grex',
+      path: 'dependencies',
+      package: {
+        artifact: 'dependencies.zip',
+      },
+    },
+  },
 };
 
 module.exports = serverlessConfiguration;
