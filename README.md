@@ -1,5 +1,5 @@
 # Regrex
-[![Travis (.com)](https://img.shields.io/travis/com/DiegoVictor/regrex?logo=travis&style=flat-square)](https://travis-ci.com/DiegoVictor/regrex.svg?branch=master)
+[![Travis (.com)](https://img.shields.io/travis/com/DiegoVictor/regrex?branch=main&logo=travis&style=flat-square)](https://travis-ci.com/DiegoVictor/regrex.svg?branch=master)
 [![serverless](https://img.shields.io/badge/serverless-3.19.0-FD5750?style=flat-square&logo=serverless)](https://www.serverless.com/)
 [![eslint](https://img.shields.io/badge/eslint-8.19.0-4b32c3?style=flat-square&logo=eslint)](https://eslint.org/)
 [![airbnb-style](https://flat.badgen.net/badge/style-guide/airbnb/ff5a5f?icon=airbnb)](https://github.com/airbnb/javascript)
