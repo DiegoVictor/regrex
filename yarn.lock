@@ -5823,3 +5823,8 @@
     "archiver-utils" "^2.1.0"
     "compress-commons" "^4.1.0"
     "readable-stream" "^3.6.0"
+
+"zod@^3.17.3":
+  "integrity" "sha512-QF1843pYoRk1jFP+/UiEySXaTSiIyFod3KyDzoO3qHKGZdX7z7RNXI4lEsiibvpnIZQwcDVU58ZrxP4pQ7BmTQ=="
+  "resolved" "https://registry.npmjs.org/zod/-/zod-3.17.9.tgz"
+  "version" "3.17.9"
