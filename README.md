@@ -53,6 +53,7 @@ cd dependencies
 7z a ../dependencies.zip *
 cd ..
 ```
+> For those that for any reason are not able to download the binary or compact your own package this repository is shipped with one package ready for use.
 
 Then, deploy the API:
 ```
