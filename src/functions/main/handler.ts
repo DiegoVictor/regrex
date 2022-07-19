@@ -11,6 +11,10 @@ export const main = async (event: APIGatewayProxyEvent) => {
 
     const { flags = [], terms } = validate.grexParams(body);
 
+    const parsedFlags = flags.map(
+      (flag: string) => `${flag.length > 1 ? '--' : '-'}${flag}`
+    );
+
     const cmd = `grex ${parsedFlags.join(' ')} "${terms.join('" "')}"`;
 
     const shell = promisify(exec);
