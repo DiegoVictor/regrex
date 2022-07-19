@@ -34,5 +34,13 @@ export const main = async (event: APIGatewayProxyEvent) => {
       };
     }
 
+    // eslint-disable-next-line no-console
+    console.log(err);
+    return {
+      statusCode: 500,
+      body: JSON.stringify({
+        message: 'Ops! Something goes wrong, try again later.',
+      }),
+    };
   }
 };
