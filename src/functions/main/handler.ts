@@ -11,18 +11,18 @@ export const main = async (event: APIGatewayProxyEvent) => {
 
     const { flags = [], terms } = validate.grexParams(body);
 
-  const cmd = `grex ${parsedFlags.join(' ')} "${terms.join('" "')}"`;
+    const cmd = `grex ${parsedFlags.join(' ')} "${terms.join('" "')}"`;
 
-  const shell = promisify(exec);
-  const { stdout } = await shell(cmd);
+    const shell = promisify(exec);
+    const { stdout } = await shell(cmd);
 
-  return {
-    statusCode: 200,
-    headers: {
-      'Content-Type': 'text/plain',
-    },
-    body: stdout,
-  };
+    return {
+      statusCode: 200,
+      headers: {
+        'Content-Type': 'text/plain',
+      },
+      body: stdout,
+    };
   } catch (err) {
     if (err instanceof ZodError) {
       return {
