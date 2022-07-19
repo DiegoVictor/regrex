@@ -24,5 +24,15 @@ export const main = async (event: APIGatewayProxyEvent) => {
     body: stdout,
   };
   } catch (err) {
+    if (err instanceof ZodError) {
+      return {
+        statusCode: 400,
+        body: JSON.stringify({
+          message: 'Validation fail',
+          details: err.errors,
+        }),
+      };
+    }
+
   }
 };
