@@ -13,6 +13,8 @@
 
 Regrex is a API that executes [grex](https://github.com/pemistahl/grex) (binary file) inside a lambda through an AWS Layer.
 
+![Demo](https://raw.githubusercontent.com/DiegoVictor/regrex/main/screenshots/demo.gif)
+
 ![Infrastructure Diagram](https://raw.githubusercontent.com/DiegoVictor/regrex/main/regrex.drawio.png)
 
 ## Table of Contents
