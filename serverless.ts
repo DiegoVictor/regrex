@@ -19,7 +19,7 @@ const serverlessConfiguration: AWS = {
     },
   },
   functions: { main },
-  package: { individually: true, exclude: ['dependencies'] },
+  package: { individually: true, patterns: ['dependencies'] },
   custom: {
     esbuild: {
       bundle: true,
