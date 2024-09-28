@@ -17,7 +17,6 @@ Regrex is a API that executes [grex](https://github.com/pemistahl/grex) (binary 
 #### Demo
 ![Demo](https://raw.githubusercontent.com/DiegoVictor/regrex/main/screenshots/demo.gif)
 
-
 ## Table of Contents
 * [Requirements](#requirements)
 * [Installing](#installing)
@@ -37,7 +36,7 @@ Regrex is a API that executes [grex](https://github.com/pemistahl/grex) (binary 
 ```
 npm install
 ```
-Or simple:
+Or simply:
 ```
 yarn
 ```
