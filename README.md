@@ -8,7 +8,7 @@
 [![coverage](https://img.shields.io/codecov/c/gh/DiegoVictor/regrex?logo=codecov&style=flat-square)](https://codecov.io/gh/DiegoVictor/regrex)
 [![MIT License](https://img.shields.io/badge/license-MIT-green?style=flat-square)](https://raw.githubusercontent.com/DiegoVictor/regrex/main/LICENSE)
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)](http://makeapullrequest.com)<br>
-[![Run in Insomnia](https://insomnia.rest/images/run.svg)](https://insomnia.rest/run/?label=Regrex&uri=https%3A%2F%2Fraw.githubusercontent.com%2FDiegoVictor%2Fregrex%2Fmain%2FInsomnia_2022-06-28.json)
+[![Run in Insomnia](https://insomnia.rest/images/run.svg)](https://insomnia.rest/run/?label=Regrex&uri=https%3A%2F%2Fraw.githubusercontent.com%2FDiegoVictor%2Fregrex%2Fmain%2FInsomnia_2024-11-22.json)
 
 Regrex is a API that executes [grex](https://github.com/pemistahl/grex) (binary file) inside a lambda through an AWS Layer.
 
