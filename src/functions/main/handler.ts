@@ -7,18 +7,26 @@ import { ZodError } from 'zod';
 
 export const main = async (event: APIGatewayProxyEvent) => {
   try {
-    const body = JSON.parse(event.body || '{}');
+    const body = JSON.parse(event.body);
 
     const { flags = [], terms } = validate.grexParams(body);
 
     const parsedFlags = flags.map(
-      (flag: string) => `${flag.length > 1 ? '--' : '-'}${flag}`
+      (flag: string) => `${flag.length > 1 ? '--' : '-'}${flag}`,
     );
 
-    const cmd = `grex ${parsedFlags.join(' ')} "${terms.join('" "')}"`;
+    const cmd = ['grex'];
+
+    if (parsedFlags.length > 0) {
+      cmd.push(parsedFlags.join(' '));
+    }
+
+    if (terms.length > 0) {
+      cmd.push(`"${terms.join('" "')}"`);
+    }
 
     const shell = promisify(exec);
-    const { stdout } = await shell(cmd);
+    const { stdout } = await shell(cmd.join(' '));
 
     return {
       statusCode: 200,
