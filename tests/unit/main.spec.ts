@@ -57,6 +57,44 @@ describe('Main Function', () => {
     });
   });
 
+  it('should be able to exec command and get a regex even without flags', async () => {
+    const terms = ['sample', 'example', 'simple'];
+
+    const stdout = `
+    (?x)
+    ^
+      (?:
+        exa
+        |
+        s[ai]
+      )
+      mple
+    $
+    `;
+    mockExec.mockResolvedValueOnce({
+      stdout,
+    });
+
+    mockGrexParams.mockReturnValueOnce({ terms });
+
+    const response = await main({
+      body: JSON.stringify({
+        terms,
+      }),
+    } as APIGatewayProxyEvent);
+
+    const cmd = `grex "${terms.join('" "')}"`;
+
+    expect(mockExec).toHaveBeenCalledWith(cmd);
+    expect(response).toStrictEqual({
+      statusCode: 200,
+      headers: {
+        'Content-Type': 'text/plain',
+      },
+      body: stdout,
+    });
+  });
+
   it('should not be able to exec command and get a regex with validation errors', async () => {
     const terms = ['sample', 'example', 'simple'];
     const flags = ['x', 'ignore-case'];
