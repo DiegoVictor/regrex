@@ -1,0 +1,74 @@
+{
+  "openapi":"3.0.2",
+  "info": {
+    "title":"Regrex",
+    "version":"1.0",
+    "license": {
+      "name": "MIT",
+      "url": "https://raw.githubusercontent.com/DiegoVictor/regrex/refs/heads/main/LICENSE"
+    }
+  },
+  "servers": [
+    {
+      "url":"http://localhost:3000"
+    }
+  ],
+  "paths": {
+    "/grex": {
+      "post": {
+        "tags": ["grex"],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Grex"
+              },
+              "example": {
+                "terms": [
+                  "sample",
+                  "example",
+                  "simple"
+                ],
+                "flags": ["x"]
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Return a regex to match the provided terms",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "string"
+                },
+                "example": "(?x)^(?:exa|s[ai])mple$"
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "Grex": {
+        "type": "object",
+        "properties": {
+          "terms": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "flags": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          }
+        }
+      }
+    }
+  }
+}
