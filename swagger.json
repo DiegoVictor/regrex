@@ -45,6 +45,81 @@
                 "example": "(?x)^(?:exa|s[ai])mple$"
               }
             }
+          },
+          "400": {
+            "description": "Validation Failed",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "message": {
+                      "type": "string"
+                    },
+                    "details": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "properties": {
+                          "code": {
+                            "type": "string"
+                          },
+                          "options": {
+                            "type": "array",
+                            "items": {
+                              "type": "string"
+                            }
+                          },
+                          "expected": {
+                            "type": "string"
+                          },
+                          "received": {},
+                          "path": {
+                            "type": "array",
+                            "items": {
+                              "type": "string"
+                            }
+                          },
+                          "message": {
+                            "type": "string"
+                          }
+                        }
+                      }
+                    }
+                  }
+                },
+                "example": {
+                  "message": "Validation fail",
+                  "details": [
+                    {
+                      "code": "invalid_type",
+                      "expected": "object",
+                      "received": "null",
+                      "path": [],
+                      "message": "Expected object, received null"
+                    }
+                  ]
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "message": {
+                      "type": "string"
+                    }
+                  }
+                },
+                "example": {
+                  "message": "Ops! Something goes wrong, try again later."
+                }
+              }
+            }
           }
         }
       }
@@ -67,7 +142,8 @@
               "type": "string"
             }
           }
-        }
+        },
+        "required": ["terms"]
       }
     }
   }
