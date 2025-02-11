@@ -11,12 +11,10 @@ export const main = async (event: APIGatewayProxyEvent) => {
 
     const { flags = [], terms } = validate.grexParams(body);
 
+    const cmd = ['grex'];
     const parsedFlags = flags.map(
       (flag: string) => `${flag.length > 1 ? '--' : '-'}${flag}`,
     );
-
-    const cmd = ['grex'];
-
     if (parsedFlags.length > 0) {
       cmd.push(parsedFlags.join(' '));
     }
