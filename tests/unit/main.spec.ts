@@ -137,7 +137,7 @@ describe('Main Function', () => {
     expect(response).toStrictEqual({
       statusCode: 400,
       body: JSON.stringify({
-        message: 'Validation fail',
+        message: 'Validation Failed',
         details: zodError.issues,
       }),
     });
@@ -177,7 +177,7 @@ describe('Main Function', () => {
     expect(response).toStrictEqual({
       statusCode: 500,
       body: JSON.stringify({
-        message: 'Ops! Something goes wrong, try again later.',
+        message: 'Oops! Something goes wrong, try again later.',
       }),
     });
   });
