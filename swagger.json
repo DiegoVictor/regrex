@@ -89,7 +89,7 @@
                   }
                 },
                 "example": {
-                  "message": "Validation fail",
+                  "message": "Validation Failed",
                   "details": [
                     {
                       "code": "invalid_type",
@@ -116,7 +116,7 @@
                   }
                 },
                 "example": {
-                  "message": "Ops! Something goes wrong, try again later."
+                  "message": "Oops! Something goes wrong, try again later."
                 }
               }
             }
