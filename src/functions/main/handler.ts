@@ -38,7 +38,7 @@ export const main = async (event: APIGatewayProxyEvent) => {
       return {
         statusCode: 400,
         body: JSON.stringify({
-          message: 'Validation fail',
+          message: 'Validation Failed',
           details: err.errors,
         }),
       };
@@ -47,7 +47,7 @@ export const main = async (event: APIGatewayProxyEvent) => {
     return {
       statusCode: 500,
       body: JSON.stringify({
-        message: 'Ops! Something goes wrong, try again later.',
+        message: 'Oops! Something goes wrong, try again later.',
       }),
     };
   }
